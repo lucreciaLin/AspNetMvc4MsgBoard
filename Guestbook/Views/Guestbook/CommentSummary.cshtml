@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Guestbook.Models.CommentSummary>
+<table>
+    <tr>
+        <th>發表的留言數</th>
+        <th>用戶名稱</th>
+    </tr>
+    @foreach (var summaryRow in Model) { 
+        <tr>
+            <td>@summaryRow.NumberOfComments</td>
+            <td>@summaryRow.UserName</td>
+        </tr>
+    }
+</table>

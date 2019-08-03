@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "List";
+}
+
+<h2>我的留言項目</h2>
+<p>
+    <a href="/Guestbook/Create">新增留言</a>
+</p>
+@model List<GuestbookEntry>
+@foreach (var entry in Model) { 
+    <section class="contact">
+        <header>
+            <h3>@entry.Message</h3>
+        </header>
+        <p>
+            Posted by @entry.Name on @entry.DateAdded.ToLongDateString()
+        </p>
+    </section>
+}

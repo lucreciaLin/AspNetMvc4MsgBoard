@@ -1,0 +1,21 @@
+﻿<h2>留言項目</h2>
+<dl>
+    <dt>姓名：</dt>
+    <dd>@Model.Name</dd>
+    <dt>留言日期：</dt>
+    <dd>@Model.DateAdded</dd>
+    <dt>訊息：</dt>
+    <dd>@Model.Message</dd>
+</dl>
+<p>
+    @{
+        bool hasPermission =
+            (bool)ViewData["hasPermission"];
+    }
+    @if (hasPermission)
+    { 
+        @Html.ActionLink("編輯", "Edit",
+            new { id = Model.Id})
+    }
+    @Html.ActionLink("返回我的留言項目", "Index");
+</p>

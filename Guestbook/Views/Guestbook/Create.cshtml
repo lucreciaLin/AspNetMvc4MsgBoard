@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "新增留言項目";
+}
+<h2>加入新留言</h2>
+@Html.ValidationSummary()
+@using (Html.BeginForm()) { 
+    <p>請輸入姓名：</p>
+    @Html.TextBox("Name")
+
+    <p>請輸入訊息：</p>
+    @Html.TextArea("Message", new {rows=10,cols=40 })
+
+    <br /><br />
+    <input type="submit" value="送出留言">
+
+}
+<!--
+<form method="post" action="">
+    <fieldset>
+        請輸入姓名：<br />
+        <input type="text" name="Name" maxlength="200" />
+        <br /><br />
+        請輸入訊息：<br />
+        <textarea name="Message" rows="10" cols="40">
+        </textarea>
+        <br /><br />
+        <input type="submit" value="送出留言" />
+    </fieldset>
+</form>
+-->
